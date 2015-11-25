@@ -1,3 +1,25 @@
+commit eca6ae08d57351ec6c335bded32bf1d96a087c43
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Nov 25 18:53:40 2015 +0000
+
+    whonixcheck pvclock test fixes
+    - no longer exit whonixcheck if unsupported pv clock was detected
+    - make unsupported pv clock detection only a warning as opposed to an error
+    - improved unsupported pv clock detection output
+    - deprecated config option WHONIXCHECK_NO_EXIT_ON_PVCLOCK_DETECTION (can be replaced by adding the function to the skipped ones)
+    - Only report unsupported pv clock for KVM, since this is not yet implemented for other platforms.
+      - Qubes: https://phabricator.whonix.org/T389
+      - VirtualBox: https://phabricator.whonix.org/T437
+    
+    Thanks to Corrupt Correct Pig for reporting this!
+    https://forums.whonix.org/t/recurring-time-error-within-gateway-11-under-virtualbox-5-error-unwanted-pvclock-kvm-clock-tsc-acpi-pm-detected/1671
+
+commit 9359ebc5a1a010a33370682a78392e37e6de2912
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Nov 13 15:53:37 2015 +0000
+
+    bumped changelog version
+
 commit 26713b4737cb7d9fe87ffe39f741ebada7f352e9
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Sun Nov 8 19:17:51 2015 +0000
