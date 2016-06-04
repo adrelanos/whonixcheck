@@ -1,3 +1,17 @@
+commit 8da787e2e97d54852c8afa72b9211d20e99b540b
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Jun 2 15:01:18 2016 +0000
+
+    fixed pvclock test
+    
+    https://forums.whonix.org/t/whonix-13-time-sync-issue
+
+commit eaa04d539f38cdfce8130e39d73f2de35bcba382
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Jun 3 19:55:57 2016 +0000
+
+    bumped changelog version
+
 commit bf3cec43f9fa46218ac71993d994fc90f397a9bc
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Sat May 14 15:09:44 2016 +0000
