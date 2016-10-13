@@ -1,3 +1,15 @@
+commit 777b548f4ea10ac60cff8fb52544410e3e17b15f
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Oct 13 18:45:38 2016 +0000
+
+    backport Whonix14 apparmor enhancements to Whonix13
+
+commit 013e00ec8a515a0cf6f4df49afcf9c9387790b84
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Sat Jun 4 21:45:09 2016 +0000
+
+    bumped changelog version
+
 commit 8da787e2e97d54852c8afa72b9211d20e99b540b
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Jun 2 15:01:18 2016 +0000
