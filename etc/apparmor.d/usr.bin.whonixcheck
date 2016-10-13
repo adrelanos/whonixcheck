@@ -51,10 +51,12 @@
 	/bin/tar rix,
 	/bin/cp rix,
 	/bin/dmesg rix,
+	/bin/systemctl rix,
 	/usr/bin/tor rix,
 	/usr/sbin/tor rix,
 	/usr/bin/mkfifo rix,
 	/usr/bin/sort rix,
+	/usr/bin/stat rix,
 
 	/sbin/start-stop-daemon rix,
 	/sbin/ifconfig rix,
@@ -97,7 +99,7 @@
 	/etc/init.d/sdwdate rix,
 	/etc/apt/apt.conf.d/ r,
 	/etc/apt/apt.conf.d/* r,
-	/etc/python2.7/sitecustomize.py r,
+	/etc/python*/sitecustomize.py r,
 	/etc/dpkg/dpkg.cfg r,
 	/etc/dpkg/dpkg.cfg.d/ r,
 	/etc/dpkg/dpkg.cfg.d/** r,
@@ -112,12 +114,10 @@
 	/etc/apparmor.d/ r,
 	/etc/uwt.d/ r,
 	/etc/uwt.d/** r,
-	/etc/tor/ r,
-	/etc/tor/** r,
 	/etc/login.defs r,
 	/etc/ssl/openssl.cnf r,
 	/etc/ssl/certs/ca-certificates.crt r,
-	/etc/tor/torrc r,
+	/etc/perl/sitecustomize.pl r,
 
 	@{HOME}/ r,
 	@{HOME}/tor-browser_en-US/Docs/version r,
@@ -127,7 +127,7 @@
 	@{HOME}/.msgcollector rwk,
 	@{HOME}/.msgcollector/** rwk,
 
-	/lib/i386-linux-gnu/** mr,
+	/lib/*-linux-gnu/** mr,
 	/lib/security/* mr,
 	/lib/*/security/** mr,
 
@@ -149,6 +149,7 @@
 	@{PROC}/sys/kernel/random/entropy_avail r,
 	@{PROC}/xen/capabilities r,
 	@{PROC}/[0-9]*/net/** r,
+	@{PROC}/sys/kernel/random/boot_id r,
 
 	/run/whonixcheck/* mrwcx,
 	/run/utmp rk,
@@ -165,6 +166,8 @@
 	/sys/devices/system/clocksource/clocksource0/current_clocksource r,
 	/sys/devices/system/clocksource/clocksource0/available_clocksource r,
 	/sys/devices/virtual/dmi/id/sys_vendor r,
+	/sys/fs/cgroup/systemd/system.slice/whonix-firewall.service/ r,
+        /sys/fs/cgroup/systemd/system.slice/whonix-firewall.service/** r,
 
 	/tmp/** lrwcix,
 
@@ -192,7 +195,7 @@
 	/usr/lib/uwtwrapper rix,
 	/usr/bin/curl rix,
 	/usr/bin/torsocks rix,
-	/usr/bin/python2.7 rix,
+	/usr/bin/python* rix,
 	/usr/bin/dpkg rix,
 	/usr/bin/getopt rix,
 	/usr/bin/gpg rix,
@@ -226,7 +229,7 @@
 	/usr/lib/msgcollector/* rix,
 	/usr/lib/sudo/sudoers.so mr,
 	/usr/lib/whonixcheck/** rix,
-	/usr/lib/python2.7/** mr,
+	/usr/lib/python*/** mr,
 	/usr/lib/torsocks/* mr,
 	/usr/lib/virt-what/virt-what-cpuid-helper rix,
 	/usr/lib/apt/methods/* rix,
@@ -241,9 +244,10 @@
 	/usr/lib/anon-shared-helper-scripts/anondate rix,
 
 	# operation="unlink" requested_mask="d" denied_mask="d"
-	/usr/lib/python2.7/* rl,
+	/usr/lib/python*/* rl,
 
-	/usr/local/lib/python2.7/dist-packages/ r,
+	/usr/local/lib/python*/dist-packages/ r,
+	/usr/local/lib/python*/dist-packages/* r,
 
 	/usr/share/whonix/** r,
 	/usr/share/ca-certificates/** r,
@@ -254,7 +258,6 @@
 	/usr/share/libthai/thbrk.tri r,
 	/usr/share/perl/** r,
 	/usr/share/vrms/** r,
-	/usr/share/tor/tor-service-defaults-torrc r,
 
 	/var/cache/apt/ r,
 	/var/cache/apt/* rw,
@@ -265,10 +268,12 @@
 	/var/lib/apt/extended_states r,
 	/var/lib/whonixcheck/** rw,
 	/var/lib/whonix/whonixblog/* rw,
-	/var/lib/tor/cached-microdesc-consensus r,
-	/var/lib/tor/cached-microdesc-consensus.new r,
-	/var/lib/tor/unverified-microdesc-consensus r,
-	/var/lib/tor/unverified-microdesc-consensus.new r,
+
+        ## For Running 'tor --verify-config'.
+        /usr/share/tor/** r,
+        /var/lib/tor/** r,
+        /{,var/}run/tor/** r,
+        /etc/tor/** r,
 
 	/var/log/sdwdate.log rw,
 	/var/log/timesanitycheck.log rw,
@@ -278,6 +283,7 @@
 
 	/run/tor/log r,
 	/run/tor/tor.pid r,
+	/run/log/journal/ r,
 	/run/tor/control.authcookie r,
 	/run/control-port-filter-python/pid r,
 	## Required for curl when resolvconf is installed.
