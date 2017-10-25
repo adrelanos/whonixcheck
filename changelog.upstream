@@ -1,3 +1,35 @@
+commit 743ccc9233e14c549214cd2b4727e97d7ff9ad4c
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Wed Oct 25 14:00:54 2017 +0200
+
+    disable leak tests, stream isolation check and whonix news in Qubes TemplateVMs
+    
+    (Qubes R4 compatibility fixes)
+    
+    https://phabricator.whonix.org/T724
+
+commit ba33cd01c901fac14307b9822e232a5f551ada02
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Oct 20 15:04:06 2017 +0000
+
+    skip Qubes network interface test in Qubes TemplateVMs
+    
+    since no longer networked by default in Qubes R4
+
+commit 46a94737bcae4373c847eed692afaebe1330a1db
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Fri Oct 20 15:00:37 2017 +0000
+
+    skip Tor bootstrap test in Qubes TemplateVM
+    
+    since non-networked since Qubes R4
+
+commit add1f1cb62c98f9a2287fc2437b09659fe055c7d
+Author: Patrick Schleizer <adrelanos@riseup.net>
+Date:   Thu Oct 13 18:46:59 2016 +0000
+
+    bumped changelog version
+
 commit 777b548f4ea10ac60cff8fb52544410e3e17b15f
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Thu Oct 13 18:45:38 2016 +0000
@@ -266,7 +298,7 @@ commit e49e3157b2a2aa17c293b441a405034eb43dcfab
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Mar 22 10:15:15 2016 +0000
 
-    	@{PROC}/[0-9]*/task/** r,
+            @{PROC}/[0-9]*/task/** r,
 
 commit 971260573446e73d288424df06a39e076d590724
 Author: Patrick Schleizer <adrelanos@riseup.net>
@@ -316,7 +348,7 @@ commit c93a264d47e67eeace9fc657ff6e52ef492ac5ff
 Author: Patrick Schleizer <adrelanos@riseup.net>
 Date:   Tue Mar 22 09:23:18 2016 +0000
 
-    	/dev/kmsg r,
+            /dev/kmsg r,
 
 commit 1411d7c3d2b3cb55c501c30c102321ef419e97d1
 Author: Patrick Schleizer <adrelanos@riseup.net>
