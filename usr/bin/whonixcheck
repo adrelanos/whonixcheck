@@ -195,8 +195,8 @@ whonixcheck_further() {
       ## Uses the network. 3
       ## after checking IPs
       ## early in list, because less likely to break
-      whonixcheck_run_function download_whonix_news ## check_news
-      whonixcheck_move_progress_bar_to_percent "45"
+      #whonixcheck_run_function download_whonix_news ## check_news
+      #whonixcheck_move_progress_bar_to_percent "45"
 
       ## Uses the network. 4
       whonixcheck_run_function check_operating_system ## check_operating_system
@@ -219,8 +219,8 @@ whonixcheck_further() {
       ## Uses the network. 2
       ## after checking IP
       ## early in list, because less likely to break
-      whonixcheck_run_function download_whonix_news ## check_news
-      whonixcheck_move_progress_bar_to_percent "66"
+      #whonixcheck_run_function download_whonix_news ## check_news
+      #whonixcheck_move_progress_bar_to_percent "66"
 
       ## Local network connection.
       whonixcheck_run_function check_qubes_update_proxy ## check_qubes

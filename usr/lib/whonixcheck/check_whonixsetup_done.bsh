@@ -34,6 +34,20 @@ check_whonixsetup_done_do() {
 }
 
 check_whonixsetup_done() {
+   local if_you_know_what_you_are_doing_msg
+   if_you_know_what_you_are_doing_msg="$(if_you_know_what_you_are_doing_funct "$FUNCNAME")" || true
+
+   local MSG="<p>
+   Whonix 13 has been deprecated. Distribution upgrade to Whonix 14 required. See
+<a href=https://www.whonix.org/wiki/Upgrading_Whonix_13_to_Whonix_14>https://www.whonix.org/wiki/Upgrading_Whonix_13_to_Whonix_14</a></p>
+
+<p>
+$if_you_know_what_you_are_doing_msg
+</p>"
+
+   $output_x ${output_opts[@]} --messagex --typex "warning" --message "$MSG" || true
+   $output_cli ${output_opts[@]} --messagecli --typecli "warning" --message "$MSG" || true
+
    ## sets: whonixsetup_done
    check_whonixsetup_done_do
 
